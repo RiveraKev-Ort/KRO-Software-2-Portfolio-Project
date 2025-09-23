@@ -1,12 +1,10 @@
 # Portfolio Part 1: Component Brainstorming
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->
+- **Name**: Kevin Rivera Ortiz
+- **Dot Number**: riveraortiz.1
+- **Due Date**: 09/19 @ 1:50 PM EST
 
 ## Assignment Overview
-
-<!-- TODO: read the assignment overview then delete this comment -->
 
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
@@ -28,8 +26,6 @@ detailed feedback, which may help you decide which component to ultimately
 implement.
 
 ## Assignment Checklist
-
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -106,23 +102,15 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<!-- TODO: briefly talk about your interests then delete this comment.
-Also, protip: you can preview what your response looks like by hitting
-the magnifying glass icon in the upper-right corner or pressing CTRL+K and
-then V. This kind of button combination is called a chord, for whatever
-reason -->
+In my spare time I like to play videogames (FPS, Racing, Fighting), I like to watsch movies and shows (preferrably horror/action/true crime), hobbies include riding my bike with my buddy preferrably taking long/backroad routes, kayaking (alum creek), and snowboarding (being able to do blue trails somewhat comfortably), if I wasnt in CSE I wouldve strongly considered a degree in finance, i really like numbers and would eventually like to be involved in developing my own or working on a bdugeting app.
 
 ## Assignment
-
-<!-- TODO: read the assignment section then delete this comment -->
 
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
-
-<!-- TODO: browse the list of possible projects then delete this comment -->
 
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
@@ -131,8 +119,6 @@ etc. Make of this whatever seems interesting to you, and keep in mind that
 you're just brainstorming right now. You do not have to commit to anything.
 
 ### Example Component
-
-<!-- TODO: review this example component then delete this comment -->
 
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
@@ -200,68 +186,92 @@ will likely refine your design to make your implementation easier to use.
 
 > Please use this section to share your designs.
 
-- Component Design #1: <!-- TODO: give component a name then delete this comment -->
+- Component Design #1: Activities Budget Planner/Tracker
   - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
-  - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
-  - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
-    answer for each of the following questions):
-    - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
-      Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component need any enums or constants (e.g.,
-      `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Can you implement your secondary methods using your kernel methods?
-      Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+   This component would help me track spneding on my hobbies/interests such as snowboarding, riding/maintenace, gear, subscriptions etc... to keep records of expenses compared to a fixed income for the week, month, quarter, year.
 
-- Component Design #2: <!-- TODO: give component a name then delete this comment -->
-  - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
-  - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
-  - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
-  - **Additional Considerations** (*note*: "I don't know" is an acceptable
-    answer for each of the following questions):
-    - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
-      Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Would this component need any enums or constants (e.g.,
-      `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
-    - Can you implement your secondary methods using your kernel methods?
-      Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+  - **Kernel Methods**
+    - addExpense(category, amount, date)
+    - getExpenses()
+    - setBudget(category, limit)
+    - getBudget(category)
+    - addIncome(amount)
 
-- Component Design #3: <!-- TODO: give component a name then delete this comment -->
-  - **Description**:
-    - <!-- TODO: describe your component then delete this comment -->
-  - **Kernel Methods**:
-    - <!-- TODO: list kernel methods then delete this comment -->
   - **Secondary Methods**:
-    - <!-- TODO: list secondary methods then delete this comment -->
+    - getTotalSpent(category) → sums expenses from getExpenses()
+    - getRemainingBudget(category) → uses getBudget() and getTotalSpent()
+    - isOverBudget(category) → compares total spent to budget limit
+    - getExpenseSummary() → aggregates expenses by category or date
   - **Additional Considerations** (*note*: "I don't know" is an acceptable
     answer for each of the following questions):
     - Would this component be mutable? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes, frequesnt addition of expenses, categories, etc..
+
     - Would this component rely on any internal classes (e.g., `Map.Pair`)?
       Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - yes map pair would be great as it can tie an expense with a value of transtion, category, group, or tag
+
     - Would this component need any enums or constants (e.g.,
       `Program.Instruction`)? Answer and explain:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - categories such as income can be an example of constant that way expense can be substracted from a fixed value to keep operations simple.
+
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
-      - <!-- TODO: provide an argument then delete this comment -->
+      - Secondary methods like getRemainingBudget(category) can be implemented using kernel methods such as getExpenses() and getBudget(category).
+
+- Component Design #2: Activity Logging Component
+  - **Description**:
+    This would be a log tracker where I would input activity info such as kayaking, hiking, excersice (gym), snowboarding, motorcycing,
+  - **Kernel Methods**:
+    - addAdventure(type, location, date, duration)
+    - getAdventures()
+    - getAdventureByType(type)
+    - getAdventureByDate(date)
+  - **Secondary Methods**:
+    - getRecentAdventures() → filters getAdventures() by recent dates
+    - getTotalTime(type) → sums durations from getAdventureByType(type)
+    - getMostFrequentActivity() → analyzes frequency from getAdventures()
+    - getAdventureStats() → combines multiple kernel methods for a summary
+  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    answer for each of the following questions):
+    - Would this component be mutable? Answer and explain:
+      - yes, logged entries may need to be edtied in the future or possibly removed
+    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
+      Answer and explain:
+      - use a class that can store data such as date, time, location
+    - Would this component need any enums or constants (e.g.,
+      `Program.Instruction`)? Answer and explain:
+      - actiivity types would be the constants, this is so that the info is tied to its respective category
+    - Can you implement your secondary methods using your kernel methods?
+      Answer, explain, and give at least one example:
+      - Secondary methods like getTotalTime(type) can be built using kernel methods like getAdventuresByType(type).
+
+- Component Design #3: Entertainment tracker
+  - **Description**:
+    - This would be like a virtual libnrary of the movies/shows and games ive played, with watchlist, rating, and/or completion status
+  - **Kernel Methods**:
+    - addMediaItem(title, type, platform)
+    - markAsCompleted(title)
+    - rateItem(title, rating)
+    - getMediaItems()
+  - **Secondary Methods**:
+    - getItemsByType(type) → filters getMediaItems()
+    - getRecommendations(genre) → analyzes ratings and genres
+    - getProgress(title) → calculates completion status
+    - getWatchHistory() → filters completed items from getMediaItems()
+  - **Additional Considerations** (*note*: "I don't know" is an acceptable
+    answer for each of the following questions):
+    - Would this component be mutable? Answer and explain:
+      - media items can be treeated like a to do list and be cheked off based on rating, view status, etc..
+    - Would this component rely on any internal classes (e.g., `Map.Pair`)?
+      Answer and explain:
+      - use a class that uses nested structures so that each entertainment can be stored in a respoective category and then be followed by its media data like IMDB
+    - Would this component need any enums or constants (e.g.,
+      `Program.Instruction`)? Answer and explain:
+      - again categories would be the rpimary constants such as movie, games, watched, completed.
+    - Can you implement your secondary methods using your kernel methods?
+      Answer, explain, and give at least one example:
+      - Secondary methods like getRecommendations(genre) can be implemented using kernel methods such as getMediaItems() and rateItem(title, rating).
 
 ## Post-Assignment
 
