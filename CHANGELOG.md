@@ -64,3 +64,21 @@ the following form: YYYY.0M.0D.
 ### Removed
 
 - Removed constrain of budget tracker to just activities.
+
+## [2025.10.22]
+
+### Added
+
+- Added bodies to various method to allow full functionality upon call (To be tested).
+
+### Changed
+
+- Changed format of the entire code having a dedicated portion for methods and main.
+
+### Fixed
+
+- Fixed Long and int issues inside of multiple methods.
+
+### Removed
+
+- Removed all of the version 1 code with barebones methods and explanations for more detailed alternative.
