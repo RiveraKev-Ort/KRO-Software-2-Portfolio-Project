@@ -82,3 +82,23 @@ the following form: YYYY.0M.0D.
 ### Removed
 
 - Removed all of the version 1 code with barebones methods and explanations for more detailed alternative.
+
+## [2025.10.25]
+
+### Added
+
+- Designed [kernel](src\BudgetTrackerKernel.java) and [enhanced interfaces](src\BudgetTracker.java) for [BudgetTrackerAlpha.java](src\BudgetTrackerAlpha.java) component.
+
+- Created Version 1 of an implementation class for [BudgetTrackerAlpha.java](src\BudgetTrackerAlpha.java) named [BudgetTracker1L.java](src\BudgetTracker1L.java).
+
+### Updated
+
+- Changed design to include more descriptive javadoc comments to make the uses of each method more understandable.
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
