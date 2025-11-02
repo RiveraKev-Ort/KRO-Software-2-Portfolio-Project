@@ -6,41 +6,23 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
-## [Unreleased]
+## [2025.10.22]
 
 ### Added
 
-- N/A
+- Added bodies to various method to allow full functionality upon call (To be tested).
 
 ### Changed
 
-- N/A
+- Changed format of the entire code having a dedicated portion for methods and main.
 
 ### Fixed
 
-- N/A
+- Fixed Long and int issues inside of multiple methods.
 
 ### Removed
 
-- N/A
-
-## [2025.09.19]
-
-### Added
-
-- Completed [Componet Brianstorming document](doc/01-component-brainstorming/01-component-brainstorming.md)
-
-### Changed
-
-- N/A
-
-### Fixed
-
-- N/A
-
-### Removed
-
-- N/A
+- Removed all of the version 1 code with barebones methods and explanations for more detailed alternative.
 
 ## [2025.10.09]
 
@@ -65,20 +47,38 @@ the following form: YYYY.0M.0D.
 
 - Removed constrain of budget tracker to just activities.
 
-## [2025.10.22]
+## [2025.09.19]
 
 ### Added
 
-- Added bodies to various method to allow full functionality upon call (To be tested).
+- Completed [Componet Brianstorming document](doc/01-component-brainstorming/01-component-brainstorming.md)
 
 ### Changed
 
-- Changed format of the entire code having a dedicated portion for methods and main.
+- N/A
 
 ### Fixed
 
-- Fixed Long and int issues inside of multiple methods.
+- N/A
 
 ### Removed
 
-- Removed all of the version 1 code with barebones methods and explanations for more detailed alternative.
+- N/A
+
+## [Unreleased]
+
+### Added
+
+- N/A
+
+### Changed
+
+- N/A
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
