@@ -6,6 +6,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## [2025.11.05]
+
+### Added
+
+- Designed abstract class [BudgetTrackerSecondary](src\BudgetTrackerSecondary.java) for [BudgetTracker](src\BudgetTracker.java) component
+
+### Changed
+
+- Moved [BudgetTrackerAlpha](src\Archive\BudgetTrackerAlpha.java) to Archive to keep main [src](src) folder with the main hirearchy of the components.
+
+- Changed design to include toString(), hashCode(), and equals() inside the secondary abstract class.
+- Added methods in the enhanced class such as getMonthlyIncome(), getCategories(), getBudgetLimit(String category), getCategoryExpense(String category),  getExpenseDates(String category), and getExpenseAmount(String category, String date) to help with the design of the secondary class.
+- Changed name of BudgetTracker1L to [BudgetTrackerOnMap](src\BudgetTrackerOnMap.java) (To be revised to fit within scope of hirearchy) to serve as future Kernel Implementation class.
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
+
 ## [2025.10.22]
 
 ### Added
