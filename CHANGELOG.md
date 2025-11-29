@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## [2025.11.23]
+
+### Added
+
+- Designed kernel implementation for [BudgetTrackerKernel](src\BudgetTrackerKernel.java) component.
+- Kernel implementation now fully implemented at [BudgetTrackerOnMap](src\BudgetTrackerOnMap.java).
+
+### Updated
+
+- Changed design to move prevoiusly implemented secondary methods inside of kernel implementation to the secondary class.
+
 ## [2025.11.05]
 
 ### Added
