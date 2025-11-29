@@ -161,8 +161,6 @@ completed the assignment.
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
-
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
 Here's what I would expect to see at the minimum:
