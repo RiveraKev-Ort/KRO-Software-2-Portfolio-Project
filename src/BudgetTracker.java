@@ -1,5 +1,3 @@
-package components.budgettracker;
-
 /**
  * Enhanced interface for BudgetTracker.
  *
