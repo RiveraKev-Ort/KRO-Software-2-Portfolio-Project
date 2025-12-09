@@ -1,3 +1,4 @@
+
 package components.budgettracker;
 
 import components.map.Map;
@@ -6,22 +7,20 @@ import components.map.Map1L;
 /**
  * {@code BudgetTracker} represented using OSU Map components.
  *
- * @convention income >= 0 AND all expense amounts >= 0 AND all budget limits >=
- *             0
- * @correspondence this.income = monthly income this.expenses = category → (date
- *                 → amount) this.budgetLimits = category → limit
+ * @convention monthlyIncome >= 0 AND all expense amounts >= 0 AND all budget
+ *             limits >= 0
+ * @correspondence this.monthlyIncome = monthly income
+ * @correspondence this.expenses = category -> (date -> amount)
+ * @correspondence this.budgetLimits = category -> limit
  */
-public class BudgetTrackerOnMap extends BudgetTrackerKernel {
-
-    private long income;
-    private Map<String, Map<String, Long>> expenses;
-    private Map<String, Long> budgetLimits;
+public class BudgetTrackerOnMap extends BudgetTrackerSecondary
+        implements BudgetTrackerKernel {
 
     /**
      * Creates initial representation.
      */
     private void createNewRep() {
-        this.income = 0;
+        this.monthlyIncome = 0;
         this.expenses = new Map1L<>();
         this.budgetLimits = new Map1L<>();
     }
@@ -51,7 +50,7 @@ public class BudgetTrackerOnMap extends BudgetTrackerKernel {
         assert source instanceof BudgetTrackerOnMap : "Violation of: source is of dynamic type BudgetTrackerOnMap";
 
         BudgetTrackerOnMap localSource = (BudgetTrackerOnMap) source;
-        this.income = localSource.income;
+        this.monthlyIncome = localSource.monthlyIncome;
         this.expenses.transferFrom(localSource.expenses);
         this.budgetLimits.transferFrom(localSource.budgetLimits);
     }
@@ -60,7 +59,7 @@ public class BudgetTrackerOnMap extends BudgetTrackerKernel {
     @Override
     public final void setMonthlyIncome(long income) {
         assert income >= 0 : "Violation of: income >= 0";
-        this.income = income;
+        this.monthlyIncome = income;
     }
 
     @Override

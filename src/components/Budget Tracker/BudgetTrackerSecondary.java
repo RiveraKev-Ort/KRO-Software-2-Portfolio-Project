@@ -1,15 +1,23 @@
-import components.budgettracker.BudgetTracker;
+import components.budgettracker;
+import components.map.Map;
+import components.set.Set;
+import java.util.Objects;
 
 /**
  * Layered implementations of secondary methods for {@code BudgetTracker}.
  */
 public abstract class BudgetTrackerSecondary implements BudgetTracker {
 
+    /**
+     * Representation fields (visible to subclasses).
+     */
+    protected long monthlyIncome;
+    protected Map<String, Map<String, Long>> expenses;
+    protected Map<String, Long> budgetLimits;
+
     /*
      * Object methods
-     * ------------------------------------------------------------
      */
-
     @Override
     public String toString() {
         return this.getBudgetSummary();
@@ -34,24 +42,30 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
     }
 
     /*
+     * ------------------------------------------------------------------
      * Secondary methods
-     * ------------------------------------------------------------
+     * ------------------------------------------------------------------
      */
-
     @Override
     public String getAllExpensesSummary() {
         StringBuilder sb = new StringBuilder();
-        Set<String> categories = this.expenses.keySet();
-        categories.sort(String.CASE_INSENSITIVE_ORDER);
 
-        for (String category : categories) {
+        Set<String> categories = this.expenses.keySet();
+        Set<String> categoriesCopy = categories.newInstance();
+        categoriesCopy.transferFrom(categories);
+
+        while (categoriesCopy.size() > 0) {
+            String category = categoriesCopy.removeAny();
             sb.append("Category: ").append(category).append("\n");
+
             Map<String, Long> categoryMap = this.expenses.value(category);
             Set<String> dates = categoryMap.keySet();
-            dates.sort((d1, d2) -> d2.compareTo(d1));
+            Set<String> datesCopy = dates.newInstance();
+            datesCopy.transferFrom(dates);
 
-            for (String date : dates) {
-                sb.append("  ").append(date).append(": $")
+            while (datesCopy.size() > 0) {
+                String date = datesCopy.removeAny();
+                sb.append(" ").append(date).append(": $")
                         .append(categoryMap.value(date) / 100.0).append("\n");
             }
         }
@@ -67,12 +81,18 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
                 .append("\n");
 
         Set<String> categories = this.expenses.keySet();
-        for (String category : categories) {
+        Set<String> categoriesCopy = categories.newInstance();
+        categoriesCopy.transferFrom(categories);
+
+        while (categoriesCopy.size() > 0) {
+            String category = categoriesCopy.removeAny();
             long categoryExpense = this.getCategoryExpense(category);
             totalExpenses += categoryExpense;
+
             long limit = this.budgetLimits.hasKey(category)
                     ? this.budgetLimits.value(category)
                     : 0;
+
             sb.append(category).append(": $").append(categoryExpense / 100.0)
                     .append(" / Limit: $").append(limit / 100.0);
 
@@ -93,8 +113,13 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
     @Override
     public long leftToBudget() {
         long totalExpenses = 0;
+
         Set<String> categories = this.expenses.keySet();
-        for (String category : categories) {
+        Set<String> categoriesCopy = categories.newInstance();
+        categoriesCopy.transferFrom(categories);
+
+        while (categoriesCopy.size() > 0) {
+            String category = categoriesCopy.removeAny();
             totalExpenses += this.getCategoryExpense(category);
         }
         return Math.max(this.monthlyIncome - totalExpenses, 0);
@@ -121,10 +146,15 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
     public long getCategoryExpense(String category) {
         assert category != null
                 && this.expenses.hasKey(category) : "Invalid category";
+
         long sum = 0;
         Map<String, Long> categoryMap = this.expenses.value(category);
         Set<String> dates = categoryMap.keySet();
-        for (String date : dates) {
+        Set<String> datesCopy = dates.newInstance();
+        datesCopy.transferFrom(dates);
+
+        while (datesCopy.size() > 0) {
+            String date = datesCopy.removeAny();
             sum += categoryMap.value(date);
         }
         return sum;
@@ -145,5 +175,4 @@ public abstract class BudgetTrackerSecondary implements BudgetTracker {
                 .hasKey(date) : "Expense not found";
         return this.expenses.value(category).value(date);
     }
-
 }

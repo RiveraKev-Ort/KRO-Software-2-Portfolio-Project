@@ -1,3 +1,4 @@
+
 package components.budgettracker;
 
 /**
@@ -16,9 +17,9 @@ public interface BudgetTrackerKernel {
      *
      * @param income
      *            the total monthly income in cents
-     * @replaces this.income
+     * @replaces this.monthlyIncome
      * @requires income >= 0
-     * @ensures this.income = income
+     * @ensures this.monthlyIncome = income
      */
     void setMonthlyIncome(long income);
 
@@ -26,14 +27,15 @@ public interface BudgetTrackerKernel {
      * Adds an expense entry to the tracker.
      *
      * @param category
-     *            the category of the expense (e.g., "Food", "Rent")
+     *            the expense category (e.g., "Food", "Rent")
      * @param date
      *            the date of the expense in format "YYYY-MM-DD"
      * @param amount
      *            the amount of the expense in cents
      * @updates this.expenses
-     * @requires amount >= 0
-     * @ensures this.expenses[category][date] += amount
+     * @requires category != null && date != null && amount >= 0
+     * @requires date is in the ISO "YYYY-MM-DD" format
+     * @ensures the total recorded for (category, date) increases by amount
      */
     void addExpense(String category, String date, long amount);
 
@@ -45,8 +47,8 @@ public interface BudgetTrackerKernel {
      * @param limit
      *            the monthly spending limit in cents
      * @updates this.budgetLimits
-     * @requires limit >= 0
-     * @ensures this.budgetLimits[category] = limit
+     * @requires category != null && limit >= 0
+     * @ensures the limit associated with category equals limit
      */
     void setBudgetLimit(String category, long limit);
 }
