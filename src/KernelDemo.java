@@ -39,16 +39,16 @@ public final class KernelImporterDemo {
         // Create a new kernel implementation (with standard queries)
         BudgetTracker1L tracker = new BudgetTracker1L();
 
-        // 1) Set income (kernel)
+        // 1) Set income
         tracker.setMonthlyIncome(INCOME_4500_00);
 
-        // 2) Add transactions (kernel)
+        // 2) Add transactions
         tracker.addExpense(CAT_RENT, DATE_2025_10_01, RENT_1200_00);
         tracker.addExpense(CAT_FOOD, DATE_2025_10_02, FOOD_65_00);
         tracker.addExpense(CAT_FOOD, DATE_2025_10_10, FOOD_42_50);
         tracker.addExpense(CAT_UTIL, DATE_2025_10_05, UTIL_180_00);
 
-        // 3) Set limits (kernel)
+        // 3) Set limits
         tracker.setBudgetLimit(CAT_FOOD, FOOD_LIMIT_400_00);
         tracker.setBudgetLimit(CAT_UTIL, UTIL_LIMIT_250_00);
 

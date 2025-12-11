@@ -305,18 +305,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+It is a very tedious process that requires a lot of trial and error, I understand that a minor mistake could cost lots of money or break a crucial component essential to an overall programs structure.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+testing was an area where I struggled a lot and I think this is one of the most cruical parts of software development, I had to find outside sources such as peers and the internet, and SOftware 1 course to use material as refference.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+ I think that throughout the process of this project im starting to realize that 100% software side is not something I may want to commit as a full time job, I am someone who likes a balance of hardware and software so i think not being able to interact with tangible objects and looking at a screen for hours on end is not something i see myself doing full time.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -324,25 +324,27 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+My ability to become fast paced in a virtual enviroment multitasking writing code and looking for solutions to a problem i am facing.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+- work under pressure
+- ability to multitask
+- problem solving
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+I really enjoyed diving into a big personal interes of mine (finance) with something I planned to do for a living, but now I am realizing I want to develop my hard skills not just specifically in software like i initialy wanted to.
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+I need to explore into the other field of tech, the other interests of mine include IT, cybersecurity, or Cloud development to name a few, so I will focus on taking classes in a similar scope to get an idea of what they are. I need to be more involved in campus but joining clubs can be a great start to finding like minded indivudals. Another way is reaching out to my professors.
 
 ### Changelog
 

@@ -55,18 +55,18 @@ public final class EnhancedMonthlyReportDemo {
 
         BudgetTracker bt = new BudgetTracker1L();
 
-        // 1) Income and limits (kernel via enhanced interface)
+        // 1) Income and limits
         bt.setMonthlyIncome(INCOME_4500_00);
         bt.setBudgetLimit(CAT_FOOD, FOOD_LIMIT_500_00);
         bt.setBudgetLimit(CAT_TRAVEL, TRAVEL_LIMIT_300_00);
 
-        // 2) Expenses (kernel)
+        // 2) Expenses
         bt.addExpense(CAT_FOOD, DATE_2025_11_01, FOOD_100_00);
         bt.addExpense(CAT_FOOD, DATE_2025_11_12, FOOD_200_00);
         bt.addExpense(CAT_TRAVEL, DATE_2025_11_20, TRAVEL_150_00);
         bt.addExpense(CAT_MISC, DATE_2025_11_22, MISC_75_00);
 
-        // 3) Enhanced summaries (secondary)
+        // 3) Enhanced summaries
         out.println("== Enhanced Monthly Report Demo ==");
         out.println(bt.getBudgetSummary());
         out.println(bt.getAllExpensesSummary());
@@ -91,7 +91,7 @@ public final class EnhancedMonthlyReportDemo {
             i++;
         }
 
-        // 5) Remaining overall (enhanced)
+        // 5) Remaining overall
         long left = bt.leftToBudget();
         out.println();
         out.println("Left to budget overall: " + toDollarsString(left));
