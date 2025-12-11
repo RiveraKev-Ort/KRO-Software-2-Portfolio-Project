@@ -6,6 +6,82 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## [2025.12.10]
+
+### Added
+
+- Designed test suite for BudgetTrackerKernel and  BudgetTrackerSecondary components.
+
+- Designed two different use cases for BudgetTrackerKernel and  BudgetTrackerSecondary component
+
+### Updated
+
+- Kernel Interface (BudgetTrackerKernel)
+
+        Added read methods to support secondary logic without representation access:
+
+        - getMonthlyIncome()
+        - getBudgetLimit(String)
+        - getCategories()
+        - getExpenseDates(String)
+        - getExpenseAmount(String, String)
+
+        Declared constants: NO_LIMIT, DATE_FORMAT, DATE_LENGTH.
+
+    Fully documented preconditions/postconditions for all methods.
+
+- Enhanced Interface (BudgetTracker)
+
+        Removed getter-style methods (moved to kernel for proper layering).
+        Retained only secondary methods:
+
+        - getAllExpensesSummary()
+        - getBudgetSummary()
+        - leftToBudget()
+
+        Updated Javadoc to clarify formatting and contract requirements.
+
+- Abstract Class (BudgetTrackerSecondary)
+
+        - Implemented all enhanced methods using kernel + OSU Standard components (Sequence1L, Set1L, Map1L):
+
+            - Sorted categories (A–Z) and dates (newest→oldest) via helper methods.
+            - Added formatDollars() for currency formatting.
+
+
+        - Added Object methods:
+
+            - toString() → Compact summary using kernel values.
+            - equals(Object) → Deep comparison of income, limits, and expenses.
+            - hashCode() → Consistent with equals; uses named constants.
+
+        - Enforced OSU style guide:
+
+            Single return statements.
+            No ternary operator.
+            Braces on all control structures.
+            Avoided magic numbers (introduced hashBase and hashPrime).
+            Descriptive variable names and complete Javadoc.
+
+- Refactored BudgetTracker1L to comply with OSU CSE Java Style Guide
+
+        - Added complete Javadoc with @requires, @ensures, @updates, and @replaces for all public methods.
+
+        - Enforced style rules:
+
+            - No magic numbers → introduced constants (DATE_LENGTH, DATE_DASH_POS_1, etc.).
+            - No ternary operators; single return per method.
+            - Braces on all control statements; descriptive names.
+            - Kernel purity maintained (no calls to other public component methods).
+
+### Fixed
+
+- N/A
+
+### Removed
+
+- N/A
+
 ## [2025.11.23]
 
 ### Added
